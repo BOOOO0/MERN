@@ -42,7 +42,7 @@ app.post("/register", (req, res) => {
     });
   });
 });
-console.log(mongoose.connection.readyState);
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

@@ -30,20 +30,20 @@ const userSchema = mongoose.Schema({
   },
 });
 // pre()는 mongoose에서 가져온 메소드
-userSchema.pre("save", function (next) {
-  //비밀번호를 암호화 시킨다
-  var user = this;
-  if (user.isModified("password")) {
-    bcrypt.genSalt(saltRounds, function (err, salt) {
-      if (err) return next(err);
-      bcrypt.hash(user.password, salt, function (err, hash) {
-        if (err) return next(err);
-        user.password = hash;
-        next();
-      });
-    });
-  }
-});
+// userSchema.pre("save", function (next) {
+//   //비밀번호를 암호화 시킨다
+//   var user = this;
+//   if (user.isModified("password")) {
+//     bcrypt.genSalt(saltRounds, function (err, salt) {
+//       if (err) return next(err);
+//       bcrypt.hash(user.password, salt, function (err, hash) {
+//         if (err) return next(err);
+//         user.password = hash;
+//         next();
+//       });
+//     });
+//   }
+// });
 const User = mongoose.model("User", userSchema);
 
 module.exports = { User };
