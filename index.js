@@ -26,7 +26,7 @@ mongoose
   .catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!asdjalkjsdlksa");
+  res.send("Hellofsdfcxkzlvjczxlkjvlkzxcvxzjuviowejoivjwosa");
 });
 
 app.post("/register", (req, res) => {
@@ -42,7 +42,7 @@ app.post("/register", (req, res) => {
     });
   });
 });
-
+console.log(mongoose.connection.readyState);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
