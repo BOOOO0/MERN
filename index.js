@@ -48,7 +48,7 @@ app.post("/api/users/register", (req, res) => {
 });
 
 app.post("/api/users/login", (req, res) => {
-  //첫번째 요청된 이메일을 데이터베이스에 있는지 찾는다
+  //첫번째, 요청된 이메일을 데이터베이스에 있는지 찾는다
   //findOne은 mongoDB 메소드
   User.findOne({ email: req.body.email }, (err, user) => {
     if (!user) {
