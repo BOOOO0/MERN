@@ -67,7 +67,7 @@ app.post("/api/users/login", (req, res) => {
       //비밀번호까지 맞다면 토큰을 생성하기
       user.generateToken((err, user) => {
         if (err) return res.status(400).send(err);
-        //토큰을 저장한다 쿠키, 로컬스토리지
+        //토큰을 저장한다 쿠키 or 로컬스토리지
         res
           .cookie("x_auth", user.token)
           .status(200)
