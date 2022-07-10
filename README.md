@@ -7,3 +7,9 @@ concurrently
 2022 07 06      
 redux 적용      
 Client에서 Login 기능 구현
+
+2022 07 10
+Login Logout                  
+Authentication을 이용한 PublicPage와 PrivatePage 나누기                       
+
+끝!
