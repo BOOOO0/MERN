@@ -1,4 +1,4 @@
-import { LOGIN_USER } from "../_actions/types";
+import { LOGIN_USER, REGISTER_USER } from "../_actions/types";
 export default function (state = {}, action) {
   switch (action.type) {
     case LOGIN_USER:
@@ -6,7 +6,8 @@ export default function (state = {}, action) {
       // 왜냐면 user_action에서 payload 가 request이기 때문에
       return { ...state, loginSuccess: action.payload };
       break;
-
+    case REGISTER_USER:
+      return { ...state, register: action.payload };
     default:
       return state;
   }

@@ -1,6 +1,9 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const LandingPage = () => {
+  const navigate = useNavigate();
   useEffect(() => {
     axios
       .get("/api/hello")
@@ -11,6 +14,15 @@ const LandingPage = () => {
         console.log(err);
       });
   }, []);
+  const onClickHandler = () => {
+    axios.get("/api/users/logout").then((response) => {
+      if (response.data.success) {
+        navigate("/");
+      } else {
+        alert("로그아웃 실패");
+      }
+    });
+  };
   return (
     <div
       style={{
@@ -22,6 +34,7 @@ const LandingPage = () => {
       }}
     >
       <h2>시작페이지</h2>
+      <button onClick={onClickHandler}>Logout</button>
     </div>
   );
 };
